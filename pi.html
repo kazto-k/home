@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+button { font-size: 2em; }
+</style>
+</head>
+<body>
+<h1>Chart 예제</h1>
+<div style='width:50vw'>
+     <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const labels = [ 'January', 'February', 'March', 'April', 'May', 'June', ];
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First Chart',
+      backgroundColor: 'rgb(139, 0, 0)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [50, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+
+  const config = {
+    type: 'bar', // 'pie', 'doughnut', 'line', 'bar'
+    data: data,
+    options: {}
+  };
+</script>
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+k = 0
+dl = datainfo.labels
+dd = datainfo.datasets[0].data
+for ( i=1 ; 1<10000000 ; i++ ) {
+    x = Math.random()
+    y = Math.randomif ( (x*x +y*y) <=1 ) k++
+    if ( i == 10 ) redraw(i)
+}
+function redraw(t) {
+      dl.push(t);
+      dd.push(4*k/t);
+      myChart.updata();
+}
+</script>
+</body>
+</html>
